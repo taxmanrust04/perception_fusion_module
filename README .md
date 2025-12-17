@@ -79,7 +79,7 @@ At a high level, the module:
 ### User Story 6.4 – Perception Fusion for Global Object Estimation
 
 **As the Perception Fusion component**,  
-I want to combine the outputs from the RealSense depth camera, object detection module, and localization system,  
+I want to combine the outputs from the RealSense depth camera, object detection module 
 so that accurate, globally referenced object information can be generated.
 
 #### Acceptance Criteria
