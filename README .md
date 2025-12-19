@@ -79,7 +79,7 @@ At a high level, the module:
 ### User Story 6.4 – Perception Fusion for Global Object Estimation
 
 **As the Perception Fusion component**,  
-I want to combine the outputs from the RealSense depth camera, object detection module 
+I want to combine the outputs from the RealSense depth camera, object detection module, and localization system,  
 so that accurate, globally referenced object information can be generated.
 
 #### Acceptance Criteria
@@ -262,3 +262,30 @@ ros2 topic echo /fused_objects_out
 - Add a `MarkerArray` display with topic `/visualization_marker`.  
 - Load the ego vehicle and model city map from the Car Description Module.  
 - Confirm that cuboids and labels appear at plausible locations relative to the vehicle and environment.
+
+5 **Run unit tests**
+
+  python3 -m pytest -v src/sensor_fusion_cpm/test/test_perception_fusion.py
+
+6 **Run tests with coverage tracking**
+
+  python3 -m coverage run --source=sensor_fusion_cpm  -m pytest src/sensor_fusion_cpm/test/test_perception_fusion.py
+
+
+7 **Generate HTML coverage report**
+
+  python3 -m coverage html --directory=src/sensor_fusion_cpm/test/htmlcov
+
+8 **Generate terminal coverage report**
+
+  python3 -m coverage report -m
+
+
+10 **Run static code analysis with pylint**
+
+  cd src/sensor_fusion_cpm/sensor_fusion_cpm/
+  pylint perception_fusion_node.py
+
+11 **run code analysis with lizard**
+
+  cd src/sensor_fusion_cpm/sensor_fusion_cpm/lizard perception_fusion_node.py
